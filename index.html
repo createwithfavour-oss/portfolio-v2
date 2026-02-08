@@ -1266,6 +1266,51 @@
         }
 
         /* ══════════════════════════════════════
+           CURSOR GLOW — DARK SECTIONS
+           ══════════════════════════════════════ */
+        .glow-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-section .glow-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 121, 59, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .glow-section:hover .glow-orb {
+            opacity: 1;
+        }
+
+        .glow-section > *:not(.glow-orb) {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ══════════════════════════════════════
+           3D TILT — WORK CARDS
+           ══════════════════════════════════════ */
+        .work-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* ══════════════════════════════════════
+           COUNTER ANIMATION
+           ══════════════════════════════════════ */
+        .count-up {
+            display: inline-block;
+        }
+
+        /* ══════════════════════════════════════
            SCROLL REVEAL
            ══════════════════════════════════════ */
         .reveal {
@@ -1457,7 +1502,7 @@
 </div>
 
 <!-- ══ HOW I WORK — DARK SECTION ══ -->
-<section class="how-section">
+<section class="how-section glow-section">
     <div class="section-header reveal">
         <div class="section-label">Process</div>
         <h2 class="section-title">How I Work</h2>
@@ -1574,19 +1619,19 @@
             </div>
             <div class="work-card-metrics">
                 <div class="work-metric">
-                    <div class="work-metric-value">+15%</div>
+                    <div class="work-metric-value count-up" data-prefix="+" data-suffix="%" data-target="15">+15%</div>
                     <div class="work-metric-label">increase in solution inquiries</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">+70%</div>
+                    <div class="work-metric-value count-up" data-prefix="+" data-suffix="%" data-target="70">+70%</div>
                     <div class="work-metric-label">lift in overall engagement</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">+30%</div>
+                    <div class="work-metric-value count-up" data-prefix="+" data-suffix="%" data-target="30">+30%</div>
                     <div class="work-metric-label">increase in session duration</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">200+</div>
+                    <div class="work-metric-value count-up" data-suffix="+" data-target="200">200+</div>
                     <div class="work-metric-label">qualified leads from case studies</div>
                 </div>
             </div>
@@ -1603,19 +1648,19 @@
             </div>
             <div class="work-card-metrics">
                 <div class="work-metric">
-                    <div class="work-metric-value">65</div>
+                    <div class="work-metric-value count-up" data-target="65">65</div>
                     <div class="work-metric-label">Slack community built from zero</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">52%</div>
+                    <div class="work-metric-value count-up" data-suffix="%" data-target="52">52%</div>
                     <div class="work-metric-label">event attendance (vs. 40% avg)</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">48.9%</div>
+                    <div class="work-metric-value count-up" data-suffix="%" data-target="48.9" data-decimals="1">48.9%</div>
                     <div class="work-metric-label">email open rate (vs. 21% avg)</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">185</div>
+                    <div class="work-metric-value count-up" data-target="185">185</div>
                     <div class="work-metric-label">active users in 3 months</div>
                 </div>
             </div>
@@ -1632,19 +1677,19 @@
             </div>
             <div class="work-card-metrics">
                 <div class="work-metric">
-                    <div class="work-metric-value">25-30%</div>
+                    <div class="work-metric-value count-up" data-prefix="" data-suffix="%" data-target="30" data-display="25-30%">25-30%</div>
                     <div class="work-metric-label">increase in impressions & leads</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">70%</div>
+                    <div class="work-metric-value count-up" data-suffix="%" data-target="70">70%</div>
                     <div class="work-metric-label">reduction in production time</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">+20%</div>
+                    <div class="work-metric-value count-up" data-prefix="+" data-suffix="%" data-target="20">+20%</div>
                     <div class="work-metric-label">improvement in organic visibility</div>
                 </div>
                 <div class="work-metric">
-                    <div class="work-metric-value">10+</div>
+                    <div class="work-metric-value count-up" data-suffix="+" data-target="10">10+</div>
                     <div class="work-metric-label">case studies, 3 on awards pages</div>
                 </div>
             </div>
@@ -1666,7 +1711,7 @@
 </div>
 
 <!-- ══ TESTIMONIALS — DARK SECTION ══ -->
-<section class="testimonials-section">
+<section class="testimonials-section glow-section">
     <div class="section-header reveal">
         <div class="section-label">Testimonials</div>
         <h2 class="section-title">What People Say</h2>
@@ -1996,6 +2041,79 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+    // ══ COUNTER ANIMATION ══
+    const isMobile = window.matchMedia('(max-width: 900px)').matches;
+    const hasTouch = 'ontouchstart' in window;
+
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting || entry.target.dataset.counted) return;
+            entry.target.dataset.counted = 'true';
+            const el = entry.target;
+            const target = parseFloat(el.dataset.target);
+            const prefix = el.dataset.prefix || '';
+            const suffix = el.dataset.suffix || '';
+            const decimals = parseInt(el.dataset.decimals) || 0;
+            const display = el.dataset.display; // for special formats like "25-30%"
+            const duration = 1800;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const ease = 1 - Math.pow(1 - progress, 3);
+                const current = target * ease;
+
+                if (display && progress >= 1) {
+                    el.textContent = display;
+                } else {
+                    el.textContent = prefix + (decimals > 0 ? current.toFixed(decimals) : Math.round(current)) + suffix;
+                }
+
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+
+    // ══ 3D TILT ON WORK CARDS (Desktop only) ══
+    if (!hasTouch) {
+        document.querySelectorAll('.work-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / centerY * -4; // max 4deg
+                const rotateY = (x - centerX) / centerX * 4;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+                card.style.transition = 'transform 0.1s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+        });
+    }
+
+    // ══ CURSOR GLOW ON DARK SECTIONS (Desktop only) ══
+    if (!hasTouch) {
+        document.querySelectorAll('.glow-section').forEach(section => {
+            const orb = document.createElement('div');
+            orb.classList.add('glow-orb');
+            section.appendChild(orb);
+
+            section.addEventListener('mousemove', (e) => {
+                const rect = section.getBoundingClientRect();
+                orb.style.left = (e.clientX - rect.left) + 'px';
+                orb.style.top = (e.clientY - rect.top) + 'px';
+            });
+        });
+    }
+
     // ══ MOBILE NAV ══
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -2019,16 +2137,18 @@
         });
     });
 
-    // ══ MAGNETIC HOVER ══
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.04)`;
+    // ══ MAGNETIC HOVER (Desktop only) ══
+    if (!hasTouch) {
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.04)`;
+            });
+            btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
         });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-    });
+    }
 
     // ══ NAV SCROLL ══
     window.addEventListener('scroll', () => {
