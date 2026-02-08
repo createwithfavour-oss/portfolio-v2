@@ -384,9 +384,19 @@
         /* ══════════════════════════════════════
            SCROLLING MARQUEE
            ══════════════════════════════════════ */
-        .ribbon {
+        .ribbon-wrapper {
             background: var(--color-primary);
-            padding: 22px 0;
+            padding: 18px 0;
+            overflow: hidden;
+            transform: rotate(-2deg);
+            margin: -10px -20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ribbon {
+            background: #fff;
+            padding: 16px 0;
             overflow: hidden;
         }
 
@@ -408,7 +418,7 @@
             font-family: var(--font-body);
             font-size: 2.2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--color-dark);
             white-space: nowrap;
             display: flex;
             align-items: center;
@@ -420,7 +430,8 @@
         .ribbon-item::after {
             content: '✦';
             font-size: 1.4rem;
-            opacity: 0.6;
+            color: var(--color-primary);
+            opacity: 0.8;
             flex-shrink: 0;
         }
 
@@ -1360,6 +1371,7 @@
             .hero-badge { display: none; }
             .doodle { display: none; }
 
+            .ribbon-wrapper { margin: -8px -30px; }
             .ribbon-item { font-size: 1.4rem; padding: 0 24px; gap: 24px; }
 
             .how-section { padding: 64px 24px; }
@@ -1471,33 +1483,35 @@
 </section>
 
 <!-- ══ SCROLLING MARQUEE ══ -->
-<div class="ribbon">
-    <div class="ribbon-track">
-        <span class="ribbon-item">Content Strategy</span>
-        <span class="ribbon-item">B2B SaaS</span>
-        <span class="ribbon-item">Positioning</span>
-        <span class="ribbon-item">Sales Enablement</span>
-        <span class="ribbon-item">Case Studies</span>
-        <span class="ribbon-item">Thought Leadership</span>
-        <span class="ribbon-item">Brand Messaging</span>
-        <span class="ribbon-item">SEO Content</span>
-        <span class="ribbon-item">Email Strategy</span>
-        <span class="ribbon-item">Community Building</span>
-        <span class="ribbon-item">Product Marketing</span>
-        <span class="ribbon-item">Investor Communications</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="ribbon-item">Content Strategy</span>
-        <span class="ribbon-item">B2B SaaS</span>
-        <span class="ribbon-item">Positioning</span>
-        <span class="ribbon-item">Sales Enablement</span>
-        <span class="ribbon-item">Case Studies</span>
-        <span class="ribbon-item">Thought Leadership</span>
-        <span class="ribbon-item">Brand Messaging</span>
-        <span class="ribbon-item">SEO Content</span>
-        <span class="ribbon-item">Email Strategy</span>
-        <span class="ribbon-item">Community Building</span>
-        <span class="ribbon-item">Product Marketing</span>
-        <span class="ribbon-item">Investor Communications</span>
+<div class="ribbon-wrapper">
+    <div class="ribbon">
+        <div class="ribbon-track">
+            <span class="ribbon-item">Content Strategy</span>
+            <span class="ribbon-item">B2B SaaS</span>
+            <span class="ribbon-item">Positioning</span>
+            <span class="ribbon-item">Sales Enablement</span>
+            <span class="ribbon-item">Case Studies</span>
+            <span class="ribbon-item">Thought Leadership</span>
+            <span class="ribbon-item">Brand Messaging</span>
+            <span class="ribbon-item">SEO Content</span>
+            <span class="ribbon-item">Email Strategy</span>
+            <span class="ribbon-item">Community Building</span>
+            <span class="ribbon-item">Product Marketing</span>
+            <span class="ribbon-item">Investor Communications</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ribbon-item">Content Strategy</span>
+            <span class="ribbon-item">B2B SaaS</span>
+            <span class="ribbon-item">Positioning</span>
+            <span class="ribbon-item">Sales Enablement</span>
+            <span class="ribbon-item">Case Studies</span>
+            <span class="ribbon-item">Thought Leadership</span>
+            <span class="ribbon-item">Brand Messaging</span>
+            <span class="ribbon-item">SEO Content</span>
+            <span class="ribbon-item">Email Strategy</span>
+            <span class="ribbon-item">Community Building</span>
+            <span class="ribbon-item">Product Marketing</span>
+            <span class="ribbon-item">Investor Communications</span>
+        </div>
     </div>
 </div>
 
@@ -1793,35 +1807,6 @@
     </div>
 </section>
 
-<!-- ══ SCROLLING MARQUEE (SECOND — REVERSED) ══ -->
-<div class="ribbon">
-    <div class="ribbon-track" style="animation-direction: reverse;">
-        <span class="ribbon-item">Content Strategy</span>
-        <span class="ribbon-item">B2B SaaS</span>
-        <span class="ribbon-item">Positioning</span>
-        <span class="ribbon-item">Sales Enablement</span>
-        <span class="ribbon-item">Case Studies</span>
-        <span class="ribbon-item">Thought Leadership</span>
-        <span class="ribbon-item">Brand Messaging</span>
-        <span class="ribbon-item">SEO Content</span>
-        <span class="ribbon-item">Email Strategy</span>
-        <span class="ribbon-item">Community Building</span>
-        <span class="ribbon-item">Product Marketing</span>
-        <span class="ribbon-item">Investor Communications</span>
-        <span class="ribbon-item">Content Strategy</span>
-        <span class="ribbon-item">B2B SaaS</span>
-        <span class="ribbon-item">Positioning</span>
-        <span class="ribbon-item">Sales Enablement</span>
-        <span class="ribbon-item">Case Studies</span>
-        <span class="ribbon-item">Thought Leadership</span>
-        <span class="ribbon-item">Brand Messaging</span>
-        <span class="ribbon-item">SEO Content</span>
-        <span class="ribbon-item">Email Strategy</span>
-        <span class="ribbon-item">Community Building</span>
-        <span class="ribbon-item">Product Marketing</span>
-        <span class="ribbon-item">Investor Communications</span>
-    </div>
-</div>
 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
