@@ -1297,22 +1297,12 @@
            ══════════════════════════════════════ */
         @media (max-width: 900px) {
             nav { padding: 14px 20px; }
-            .nav-toggle { display: block; }
+            .nav-toggle { display: none !important; }
             .nav-links {
-                position: fixed;
-                inset: 0;
-                background: var(--color-light);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 48px;
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s;
-                z-index: 200;
+                display: flex;
+                gap: 20px;
             }
-            .nav-links.open { opacity: 1; pointer-events: all; }
-            .nav-links a { font-size: 1.8rem; font-weight: 600; color: var(--color-dark); }
+            .nav-links a { font-size: 0.85rem; font-weight: 600; }
 
             .hero { padding: 110px 24px 64px; }
             .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
