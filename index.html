@@ -386,24 +386,22 @@
            SCROLLING MARQUEE
            ══════════════════════════════════════ */
         .ribbon-wrapper {
-            background: var(--color-primary);
-            padding: 18px 0;
+            background: var(--color-light-warm, #F8F6F3);
+            border-top: 1px solid var(--color-gray-200, #E8E5DE);
+            border-bottom: 1px solid var(--color-gray-200, #E8E5DE);
+            padding: 20px 0;
             overflow: hidden;
-            transform: rotate(-2deg);
-            margin: -10px -20px;
             position: relative;
             z-index: 2;
         }
 
         .ribbon {
-            background: #fff;
-            padding: 16px 0;
             overflow: hidden;
         }
 
         .ribbon-track {
             display: flex;
-            animation: marquee 30s linear infinite;
+            animation: marquee 45s linear infinite;
             width: max-content;
         }
 
@@ -415,24 +413,24 @@
         }
 
         .ribbon-item {
-            padding: 0 40px;
+            padding: 0 28px;
             font-family: var(--font-body);
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--color-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-muted, #6B6B7B);
             white-space: nowrap;
             display: flex;
             align-items: center;
-            gap: 40px;
-            letter-spacing: 0.01em;
+            gap: 28px;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
         .ribbon-item::after {
-            content: '✦';
-            font-size: 1.4rem;
+            content: '·';
+            font-size: 1.2rem;
             color: var(--color-primary);
-            opacity: 0.8;
+            opacity: 0.5;
             flex-shrink: 0;
         }
 
@@ -1372,8 +1370,7 @@
             .hero-badge { display: none; }
             .doodle { display: none; }
 
-            .ribbon-wrapper { margin: -8px -30px; }
-            .ribbon-item { font-size: 1.4rem; padding: 0 24px; gap: 24px; }
+            .ribbon-item { font-size: 0.8rem; padding: 0 18px; gap: 18px; }
 
             .how-section { padding: 64px 24px; }
             .how-grid { grid-template-columns: 1fr; }
