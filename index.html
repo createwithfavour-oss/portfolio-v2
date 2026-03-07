@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* ══════════════════════════════════════
            RESET & CSS VARIABLES
@@ -77,12 +78,10 @@
             border-bottom-color: transparent;
         }
 
-        .nav-logo {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--color-dark);
-            letter-spacing: -0.01em;
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -989,9 +988,11 @@
         }
 
         .footer-brand .nav-logo {
-            color: #fff;
-            font-size: 1rem;
             margin-bottom: 6px;
+        }
+
+        .footer-brand .nav-logo img {
+            filter: brightness(0) invert(1);
         }
 
         .footer-contact {
@@ -1419,7 +1420,7 @@
 
 <!-- ══ NAVIGATION ══ -->
 <nav>
-    <div class="nav-logo">Favour Yusuf</div>
+    <div class="nav-logo"><img src="logo.png" alt="Favour Yusuf"></div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
     </button>
@@ -1811,7 +1812,7 @@
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <div class="nav-logo">Favour Yusuf</div>
+            <div class="nav-logo"><img src="logo.png" alt="Favour Yusuf"></div>
             <p>Content & Positioning Strategist for B2B SaaS</p>
         </div>
         <div class="footer-contact">
